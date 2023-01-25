@@ -1,0 +1,63 @@
+2-Calculer la complexité temporelle de chacun de ces algorithmes 
+
+Rappel : La complexité temporelle d'un algorithme désigne la mesure du nombre d'instructions exécutées par cet algorithme. Elle est donnée sous la forme d’une fonction dont les variables sont les données en entrée de l’algorithme. Cette fonction peut être une expression mathématique exacte mais cette forme est rarement utilisée. Elle peut être aussi  une expression mathématique en ordre de grandeur. Cette deuxième forme est la forme couramment utilisée et elle est donnée en notation Landau. 
+
+
+
+Pour calculer la complexité temporelle d'un algorithme, on doit :
+	-calculer les fréquences d'exécutions de chacune des instructions de l'algorithme ;
+	-Dans le cas d’une instruction conditionnelle complète ayant les 2 branches alors et sinon, on doit calculer la fréquence de la condition de l’instruction conditionnelle et le maximum des fréquences entre ses 2 branches dans le pire cas et le minimum des fréquences dans le meilleur cas (car une seule branche est exécutée). 
+	-Dans le cas d’une instruction de répétition (pour, tant que ou répéter), on doit calculer la fréquence de la condition de l’instruction de la répétition et les fréquences des instructions contenues dans le corps (ou le bloc) de l’instruction de la répétition ;
+	-Calculer la somme des fréquences des instructions de l’algorithme. 
+	
+L'unité de mesure pour la complexité temporelle est le nombre d'instructions exécutées. Les instructions exécutables correspondent aux opérations exécutables par le processeur de manière indivisible : 
+
+	-les opérations arithmétiques (+, -, *, /) ; 
+	-les opérations de condition (==, !=, <, <=, >, >=) ;
+	-les opérations d'entrée/sortie (lire(), ecrire()).
+
+On suppose que toutes les instructions prennent la même durée de temps d'exécution, ce qui permet de faire l'addition de leurs fréquences d'exécutions.  
+Le meilleur cas d’un algorithme correspond au nombre minimal du nombre d’instructions exécutées par cet algorithme alors que le pire cas correspond au nombre maximal du nombre d’instructions exécutées. 
+
+ 
+
+N° 	Instruction Ii				Fréquence d'exécution fi
+
+1	ecrire("\nDonner la valeur N = "); 		1
+2	lire(N);					1
+3	S = 0 ;						1
+4	i  = 1 ;					1
+5	tant que (i<=N) faire 				(N+1)1
+	{
+6	S = S + 1 ;					2N	//(2 opérations : + et =)
+7	i  = i + 1 ;					2N	//(2 opérations : + et =)
+	}//fin tant que 
+8	ecrire (N, ?est premier?) ;			1
+	 
+
+remarque : Dans cet algorithme, la complexité est exacte. Il n’y pas de meilleur cas ou de pire cas. 
+
+la complexité de cet algorithme : 
+	En notation exacte :	5N+6
+	En notation Landau :	O(N)
+
+
+3-Calculer la complexité spatiale de chacun de ces algorithmes 
+
+Rappel : 
+La complexité spatiale d'un algorithme est la mesure exacte (rarement utilisée) ou en ordre de grandeur (couramment utilisée et donnée en notation Landau) de l'espace mémoire occupé par  les instructions et les données lors de son exécution. 
+
+Soit NI le nombre d'instructions de l'algorithme Somme_1 (ci-dessus) et soit a  l'espace mémoire occupé par ces instructions. 
+On a: NI = 8 instructions. 
+Comme 1 instruction occupe 1 mot mémoire (par hypothèse), alors a = 8 mots mémoires.
+
+Soit ND le nombre de données de l'algorithme Somme_1 (ci-dessus) et soit ß  l'espace mémoire occupé par ces données. 
+On a: 3 variables scalaires N, S et i de type entier et/ou réel. Donc: ND = 3 données.
+Comme 1 donnée occupe 1 mot mémoire (par hypothèse), alors ß = 3 mots mémoires.
+
+Soit SM l'espace mémoire occupé par  les instructions et les données de l'algorithme Somme_1.  
+On a: SM(N) = a + ß = 8 + 3 mots mémoires =.11 mots mémoires.
+
+
+
+
